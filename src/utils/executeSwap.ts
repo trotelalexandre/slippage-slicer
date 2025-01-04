@@ -1,4 +1,4 @@
-import { Route, Trade, SwapRouter, Pool, SwapOptions } from "@uniswap/v3-sdk";
+import { Route, Pool } from "@uniswap/v3-sdk";
 import {
   BATCH_SIZE,
   MAX_FEE_PER_GAS,
@@ -8,8 +8,7 @@ import {
 } from "../data/params.js";
 import { logToFile } from "./logToFile.js";
 import { getOutputQuote } from "./getOutputQuote.js";
-import { CurrencyAmount, TradeType, Percent, Token } from "@uniswap/sdk-core";
-import { approveTokenTransfer } from "./approveTokenTransfer.js";
+import { Percent, Token } from "@uniswap/sdk-core";
 import { Address } from "viem";
 import { Interface } from "@ethersproject/abi";
 
@@ -26,10 +25,6 @@ export async function executeSwap({ pool }: { pool: Pool }) {
   });
 
   logToFile(`Amount out: ${amountOut}`);
-
-  const tokenApproval = await approveTokenTransfer(pool.token1);
-
-  logToFile(`Token approval: ${tokenApproval.hash}`);
 
   const slippageTolerance: Percent = new Percent(50, 10_000); // 0.5% slippage tolerance
   const deadline: number = Math.floor(Date.now() / 1000) + 60 * 20; // 20 minutes from the current Unix time

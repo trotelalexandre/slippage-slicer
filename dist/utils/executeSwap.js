@@ -12,7 +12,6 @@ import { BATCH_SIZE, MAX_FEE_PER_GAS, MAX_PRIORITY_FEE_PER_GAS, ROUTER_ADDRESS, 
 import { logToFile } from "./logToFile.js";
 import { getOutputQuote } from "./getOutputQuote.js";
 import { Percent } from "@uniswap/sdk-core";
-import { approveTokenTransfer } from "./approveTokenTransfer.js";
 import { Interface } from "@ethersproject/abi";
 export function executeSwap(_a) {
     return __awaiter(this, arguments, void 0, function* ({ pool }) {
@@ -22,8 +21,6 @@ export function executeSwap(_a) {
             tokenInAddress: pool.token1.address,
         });
         logToFile(`Amount out: ${amountOut}`);
-        const tokenApproval = yield approveTokenTransfer(pool.token1);
-        logToFile(`Token approval: ${tokenApproval.hash}`);
         const slippageTolerance = new Percent(50, 10000); // 0.5% slippage tolerance
         const deadline = Math.floor(Date.now() / 1000) + 60 * 20; // 20 minutes from the current Unix time
         const abi = [

@@ -12,6 +12,7 @@ import { executeSwap } from "./utils/executeSwap.js";
 import { INTERVALS } from "./data/params.js";
 import { clearLogFile } from "./utils/clearLogFile.js";
 import { clearDebugFile } from "./utils/clearDebugFile.js";
+import { approveTokenTransfer } from "./utils/approveTokenTransfer.js";
 function clearAllLogs() {
     clearLogFile();
     clearDebugFile();
@@ -21,6 +22,7 @@ function clearAllLogs() {
         clearAllLogs();
         const poolInfo = yield getPoolInfo();
         const { pool } = poolInfo;
+        const tokenApproval = yield approveTokenTransfer(pool.token1);
         setInterval(() => __awaiter(void 0, void 0, void 0, function* () {
             yield executeSwap({ pool });
         }), INTERVALS);

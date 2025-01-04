@@ -1,6 +1,7 @@
 import { Token } from "@uniswap/sdk-core";
 import { WALLET, ROUTER_ADDRESS } from "../data/params.js";
 import { Contract, ethers } from "ethers";
+import { logToFile } from "./logToFile.js";
 
 export async function approveTokenTransfer(token: Token) {
   const tokenContract: Contract = new ethers.Contract(
@@ -13,6 +14,8 @@ export async function approveTokenTransfer(token: Token) {
     ROUTER_ADDRESS,
     ethers.MaxUint256
   );
+
+  logToFile(`Token approval: ${approval.hash}`);
 
   return approval;
 }

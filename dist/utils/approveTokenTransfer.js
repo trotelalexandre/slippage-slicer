@@ -9,10 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { WALLET, ROUTER_ADDRESS } from "../data/params.js";
 import { ethers } from "ethers";
+import { logToFile } from "./logToFile.js";
 export function approveTokenTransfer(token) {
     return __awaiter(this, void 0, void 0, function* () {
         const tokenContract = new ethers.Contract(token.address, ["function approve(address spender, uint256 amount)"], WALLET);
         const approval = yield tokenContract.approve(ROUTER_ADDRESS, ethers.MaxUint256);
+        logToFile(`Token approval: ${approval.hash}`);
         return approval;
     });
 }

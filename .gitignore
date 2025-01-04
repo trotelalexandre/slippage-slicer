@@ -1,0 +1,9 @@
+# Logs
+debug.txt
+log.txt
+
+# Node modules
+node_modules
+
+# env
+.env

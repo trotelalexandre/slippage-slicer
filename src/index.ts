@@ -17,7 +17,7 @@ function clearAllLogs() {
     const poolInfo = await getPoolInfo();
     const { pool } = poolInfo;
 
-    const tokenApproval = await approveTokenTransfer(pool.token1);
+    await approveTokenTransfer(pool.token1);
 
     setInterval(async () => {
       await executeSwap({ pool });

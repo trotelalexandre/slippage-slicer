@@ -14,7 +14,7 @@ export const POOL_ADDRESS: Address =
 export const QUOTER_ADDRESS: Address =
   "0x61fFE014bA17989E743c5F6cB21bF9697530B21e"; // quoter address
 
-export const BATCH_SIZE = ethers.parseUnits("10000", 18);
+export const BATCH_SIZE = ethers.parseUnits("50000", 18);
 export const INTERVALS: number = 30000; // 30 seconds
 
 export const LOG_FILE: string = "log.txt";

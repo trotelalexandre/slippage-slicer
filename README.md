@@ -18,27 +18,26 @@ Follow these simple steps to get started with SlippageSlicer:
 
 1. **Install the tool**:
 
-- Clone the repository to your local machine.
-- Install the dependencies with: `npm install`
+   - Clone the repository to your local machine.
+   - Install the dependencies with: `npm install`
 
 2. **Configure your wallet**:
 
-- Add your private key to the .env file. This will allow SlippageSlicer to interact with your wallet and execute trades on your behalf.
+   - Add your private key to the .env file. This will allow SlippageSlicer to interact with your wallet and execute trades on your behalf.
 
 3. **Prepare the Parameters**:
 
-The tool needs parameters like:
+   The tool needs parameters like:
 
-- **Token addresses**: The tokens you want to swap.
-- **Amounts**: The amount of tokens you wish to trade.
-- **Interval time**: The time interval between each trade.
-- Other necessary parameters related to your trades.
+   - **Token Addresses**: The tokens you want to swap.
+   - **Amounts**: The amount of tokens you wish to trade.
+   - **Interval Time**: The time interval between each trade.
+   - Other necessary parameters related to your trades.
 
 4. **Build and start the tool**:
 
-- Build the project by running: `npm run build`
-
-- Once built, start the tool with: `npm run start`
+   - Build the project by running: `npm run build`
+   - Once built, start the tool with: `npm run start`
 
 ## How it works ⚙️
 

@@ -1,10 +1,10 @@
 {
-  "name": "uniswap-trade-batch",
+  "name": "slippage-slicer",
   "version": "1.0.0",
   "main": "src/index.ts",
   "author": "Alexandre Trotel",
   "license": "ISC",
-  "description": "A Node.js tool to trade a token on Uniswap at a regular interval.",
+  "description": "The tool that slices through slippage, one trade at a time! 🍰.",
   "type": "module",
   "scripts": {
     "start": "node --no-warnings dist/index.js",

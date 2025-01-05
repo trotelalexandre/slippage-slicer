@@ -19,12 +19,7 @@ Follow these simple steps to get started with SlippageSlicer:
 1. **Install the tool**:
 
 - Clone the repository to your local machine.
-
-- Install the dependencies with:
-
-```bash
-npm install
-```
+- Install the dependencies with: `npm install`
 
 2. **Configure your wallet**:
 
@@ -41,17 +36,9 @@ The tool needs parameters like:
 
 4. **Build and start the tool**:
 
-- Build the project by running:
+- Build the project by running: `npm run build`
 
-```bash
-npm run build
-```
-
-- Once built, start the tool with:
-
-```bash
-npm run start
-```
+- Once built, start the tool with: `npm run start`
 
 ## How it works ⚙️
 
